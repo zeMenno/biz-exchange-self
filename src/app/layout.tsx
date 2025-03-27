@@ -26,10 +26,11 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <TRPCReactProvider>
           <SessionProvider>
-            <div className="flex min-h-screen flex-col">
+            <div className="relative">
               <Header/>
-              {children}
-              {/* <Footer/> */}
+              <main>
+                {children}
+              </main>
             </div>
           </SessionProvider>
         </TRPCReactProvider>

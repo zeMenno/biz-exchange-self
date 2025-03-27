@@ -2,18 +2,18 @@
 import * as React from "react"
 import Link from "next/link"
 import { ChevronDown, Menu, X } from "lucide-react"
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import { Button } from "~/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "~/components/ui/dropdown-menu"
 import { cn } from "~/lib/utils"
-import { signOut } from "~/server/auth"
+
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
   const session = useSession()
 
   return (
-    <nav className="border-b bg-background">
+    <nav className="sticky top-0 border-b z-50 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -32,16 +32,13 @@ export default function Navbar() {
                 <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
                 <path d="M12 18V6" />
               </svg>
-              <span className="text-xl font-bold">BizExchange</span>
+              <span className="text-xl font-bold fill-primary">BizExchange</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-              <Link href="/" className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted">
-                Home
-              </Link>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm" className="h-9 gap-1">
@@ -96,7 +93,7 @@ export default function Navbar() {
                   <Button variant="outline" size="sm" asChild>
                     <Link href="/dashboard">Dashboard</Link>
                   </Button>
-                  <Button onClick={() => signOut({ redirectTo: '/' })}>Logout</Button>
+                  <Button size="sm" onClick={() => signOut({redirectTo: "/"})}>Logout</Button>
                 </div>
               </div>
             ) : (
