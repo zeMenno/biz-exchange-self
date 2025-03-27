@@ -89,7 +89,7 @@ export default function Navbar() {
             </div>
           </div>
         
-          {/* User Actions */
+          {
             session?.data?.user ? (
               <div className="hidden md:block">
                 <div className="flex items-center space-x-2">
