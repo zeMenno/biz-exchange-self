@@ -3,12 +3,13 @@ import BusinessHero from "~/components/business-hero";
 import { CallToAction } from "~/components/call-to-action";
 import { QuickValuationTool } from "~/components/quick-valuation-tool";
 import { HydrateClient } from "~/trpc/server";
+import Pricing from "~/components/pricing";
 
 export default async function Home() {
   return (
     <HydrateClient>
       <BusinessHero/>
-      <div className="py-16 bg-gray-50 -mx-4 px-4">
+      <div className="w-full px-[15%] py-12 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-blue-50 to-sky-50">
         <div className="container mx-auto">
           <div className="row-auto">
           <div className="text-center mb-12">
@@ -24,6 +25,7 @@ export default async function Home() {
         </div>
       </div>
       <CallToAction/>
+        <Pricing/>
     </HydrateClient>
   );
 }

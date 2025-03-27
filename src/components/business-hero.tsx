@@ -35,15 +35,14 @@ export default function BusinessHero() {
   return (
     <section
       ref={containerRef}
-      className="w-full px-32 py-12 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-blue-50 to-sky-50"
+      className="w-full px-[15%] py-12 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-blue-50 to-sky-50"
     >
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex flex-col justify-center space-y-4">
-            {/* <div className="inline-flex items-center rounded-lg bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 mb-2">
-              <Building className="mr-1 h-3.5 w-3.5" />
-              <span>Business Growth Platform</span>
-            </div> */}
+            {/*<div className="bg-primary inline-block rounded-lg px-3 py-1 text-sm text-white">*/}
+            {/*  Grow a business*/}
+            {/*</div>*/}
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-slate-900">
               Connect Your Business <span className="text-blue-600">With The Right Buyers</span>
             </h1>
